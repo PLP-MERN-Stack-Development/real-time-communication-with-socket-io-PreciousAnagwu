@@ -1,77 +1,87 @@
-# Real-Time Chat Application with Socket.io
+# 💬 Real-Time Chat Application (Week 5 MERN Assignment)
 
-This assignment focuses on building a real-time chat application using Socket.io, implementing bidirectional communication between clients and server.
+This project is a **real-time chat application** built with the **MERN stack** and **Socket.io**, demonstrating live bidirectional communication between multiple clients and the server.  
+It allows users to chat in real time, see who’s online, get notifications, and enjoy a smooth, responsive experience.
 
-## Assignment Overview
+---
 
-You will build a chat application with the following features:
-1. Real-time messaging using Socket.io
-2. User authentication and presence
-3. Multiple chat rooms or private messaging
-4. Real-time notifications
-5. Advanced features like typing indicators and read receipts
+## 🚀 Objectives
 
-## Project Structure
+- Build a real-time communication app using **Socket.io**
+- Implement **live chat**, **user status**, and **notifications**
+- Demonstrate **bidirectional** and **event-driven** communication
 
-```
-socketio-chat/
-├── client/                 # React front-end
-│   ├── public/             # Static files
-│   ├── src/                # React source code
-│   │   ├── components/     # UI components
-│   │   ├── context/        # React context providers
-│   │   ├── hooks/          # Custom React hooks
-│   │   ├── pages/          # Page components
-│   │   ├── socket/         # Socket.io client setup
-│   │   └── App.jsx         # Main application component
-│   └── package.json        # Client dependencies
-├── server/                 # Node.js back-end
-│   ├── config/             # Configuration files
-│   ├── controllers/        # Socket event handlers
-│   ├── models/             # Data models
-│   ├── socket/             # Socket.io server setup
-│   ├── utils/              # Utility functions
-│   ├── server.js           # Main server file
-│   └── package.json        # Server dependencies
-└── README.md               # Project documentation
+---
+
+## 🧱 Tech Stack
+
+**Frontend:** React (Vite), Tailwind CSS  
+**Backend:** Node.js, Express.js, MongoDB  
+**Real-time Engine:** Socket.io  
+**Authentication:** JWT (username-based)  
+**Database:** MongoDB Atlas / Local MongoDB  
+**Environment Management:** dotenv  
+---
+
+## ⚙️ Installation & Setup
+
+### 🖥️ Server Setup
+```bash
+cd server
+npm install
 ```
 
-## Getting Started
+Create a `.env` file in the **server** directory:
+```env
+PORT=4000
+MONGO_URI=mongodb://localhost:27017/chatapp
+JWT_SECRET=se3f9b8a1a4d3c7f9b2cde6a4f7b9c3d4e5a6f708d9c1b2a3c4d5e6f7a8b9c0d1
+CLIENT_ORIGIN=http://localhost:5173
+```
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week5-Assignment.md` file
-4. Complete the tasks outlined in the assignment
+Start the server:
+```bash
+npm start
+```
 
-## Files Included
+### 💻 Client Setup
+```bash
+cd client
+npm install
+npm run dev
+```
 
-- `Week5-Assignment.md`: Detailed assignment instructions
-- Starter code for both client and server:
-  - Basic project structure
-  - Socket.io configuration templates
-  - Sample components for the chat interface
+Then open [http://localhost:5173](http://localhost:5173) in your browser.
 
-## Requirements
+---
 
-- Node.js (v18 or higher)
-- npm or yarn
-- Modern web browser
-- Basic understanding of React and Express
+## 🧠 How It Works
 
-## Submission
+1. The **server** handles all socket connections and broadcasts events.  
+2. Each user joins a global room or a private room.  
+3. Messages are emitted in real time and stored in MongoDB.  
+4. Socket.io events handle:
+   - `message`
+   - `typing`
+   - `user_connected`
+   - `user_disconnected`
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+---
 
-1. Complete both the client and server portions of the application
-2. Implement the core chat functionality
-3. Add at least 3 advanced features
-4. Document your setup process and features in the README.md
-5. Include screenshots or GIFs of your working application
-6. Optional: Deploy your application and add the URLs to your README.md
+## 🖼️ Screenshot
 
-## Resources
+![App Screenshot](./Screenshot_WK5.png)
 
-- [Socket.io Documentation](https://socket.io/docs/v4/)
-- [React Documentation](https://react.dev/)
-- [Express.js Documentation](https://expressjs.com/)
-- [Building a Chat Application with Socket.io](https://socket.io/get-started/chat) 
+---
+
+## 👩‍💻 Author
+
+**Name:** Anagwu Precious Chinemerem  
+**Program:** PLP Academy – MERN Stack Specialization (Week 5)  
+**Project:** Real-Time Chat Application with Socket.io  
+
+---
+
+## 🏁 License
+
+This project is for educational purposes under the **PLP Academy Week 5 MERN Stack Assignment**.
